@@ -1,5 +1,5 @@
 import express from 'express';
-
+import cors from 'cors';
 import { z } from 'zod'
 import { config } from 'dotenv'
 
@@ -14,6 +14,9 @@ const env = configSchema.parse(process.env);
 const app = express();
 
 app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
 
 app.get('/health', async (req, res) => {
