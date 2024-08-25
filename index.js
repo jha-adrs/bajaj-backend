@@ -48,7 +48,7 @@ app.post('/bfhl', async (req, res) => {
         for (let i = 0; i < data.length; i++) {
             if (!isNaN(data[i])) {
                 numbers.push(data[i]);
-            } else if (data[i].charCodeAt(0) >= 97 && data[i].charCodeAt(0) <= 122) {
+            } else if (data[i]?.toLowerCase().charCodeAt(0) >= 97 && data[i]?.toLowerCase().charCodeAt(0) <= 122) {
                 alphabets.push(data[i]);
                 if (highest_lowercase_alphabet.length === 0) {
                     highest_lowercase_alphabet.push(data[i]);
